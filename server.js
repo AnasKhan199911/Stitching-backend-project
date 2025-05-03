@@ -11,7 +11,7 @@ const port = 5000;
 const dbURI = "mongodb+srv://Alizain-Merchant:ali123ali@cluster-1.mcik1.mongodb.net/myAppDatabase?retryWrites=true&w=majority";
 
 // Connect to MongoDB
-mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect(dbURI)
   .then(() => console.log("✅ Connected to MongoDB Atlas"))
   .catch((err) => console.error("❌ Error connecting to MongoDB:", err));
 
@@ -38,6 +38,10 @@ app.get("/home", (req, res) => {
 // Login failure fallback
 app.get("/login", (req, res) => {
   res.send("<h1>Login Failed</h1><p>Please try logging in again.</p>");
+});
+
+app.get("/", (req, res) => {
+  res.send("<h1>Welcome to the Home Page</h1>");
 });
 
 // Start server
