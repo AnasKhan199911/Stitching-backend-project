@@ -24,6 +24,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 // Routes
+app.use("/api/image", require("./routes/imageRoutes"));
 app.use("/api/auth", require("./routes/authRoutes"));
 
 // Home route after Google login (for testing)

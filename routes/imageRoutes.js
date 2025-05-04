@@ -9,11 +9,10 @@ const {
   viewImage
 } = require("../controllers/imageController");
 
-// Multer configuration for file upload
 const storage = multer.diskStorage({
-  destination: (req, file, cb) => {
-    cb(null, "./uploads/"); // Make sure this directory exists
-  },
+  // destination: (req, file, cb) => {
+  //   cb(null, "./uploads/"); // Make sure this directory exists
+  // },
   filename: (req, file, cb) => {
     cb(null, Date.now() + "_" + file.originalname);
   }
